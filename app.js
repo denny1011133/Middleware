@@ -8,7 +8,7 @@ const totalTime = function (req, res, next) {
   const date = start.getFullYear() + '-' + (start.getMonth() + 1) + '-' + start.getDate();
   const time = start.getHours() + ":" + start.getMinutes() + ":" + start.getSeconds();
   const requestTime = date + ' ' + time;
-  console.log(`requestTime:${requestTime}`);
+  console.log(`requestTime:${requestTime}`, req.originalUrl, req.method);
   res.on("finish", () => {
     const end = new Date();
     const totalPass = end - start
